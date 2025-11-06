@@ -3,6 +3,7 @@ import { Pressable, Text } from "react-native";
 type ButtonGenericProps = {
   variant: "default" | "denied" | "link";
   text: string;
+  press: () => void;
 };
 
 export default function ButtonGeneric({ ...props }: ButtonGenericProps) {
@@ -16,9 +17,9 @@ export default function ButtonGeneric({ ...props }: ButtonGenericProps) {
               paddingHorizontal: 50,
               paddingVertical: 10,
               borderRadius: 10,
-              
             },
           ]}
+          onPress={props.press}
         >
           <Text
             style={{
